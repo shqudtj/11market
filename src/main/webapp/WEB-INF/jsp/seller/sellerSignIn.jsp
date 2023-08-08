@@ -2,12 +2,11 @@
     pageEncoding="UTF-8"%>
 <div class="d-flex justify-content-center">
 	<div class="login-box">
-		<h1 class="mb-4">옆에 로고 나중에 직접 만들기  구매회원로그인</h1>
+		<h1 class="mb-4">판매회원 로그인</h1>
 		
 		<form id="loginForm" action="/user/sign_in" method="post">
 			<div class="input-group mb-3">
 
-			<a class="btn btn-block btn-dark" href="#">회원비회원나중에</a>
 				<div class="input-group-prepend">
 					<span class="input-group-text">ID</span>
 				</div>
@@ -23,18 +22,14 @@
 
 			
 			<input type="submit" id="loginBtn" class="btn btn-block btn-primary" value="로그인">
-			<a class="btn btn-block btn-dark" href="/user/sign_up_view">회원가입</a>
+			<a class="btn btn-block btn-dark" href="/seller/seller_sign_up_view">회원가입</a>
 			
-			<a class="btn btn-block btn-primary" href="/seller/seller_sign_in_view">판매회원 로그인</a>
-					
-		
-			<a href="/#">주문내역조회 나중에</a>
-			<a href="#">구매비밀번호 나중에</a>
+			<a class="btn btn-block btn-primary" href="/user/sign_in_view">구매회원 로그인</a>
 		</form>
 	</div>
 </div>
 <script>
-	$(document).ready(function() {
+$(document).ready(function() {
 		//alert("준비완료");
 		
 		// 로그인
@@ -62,7 +57,7 @@
 			$.post(url, params)	// request
 			.done(function(data) {
 				if (data.code == 1) {
-					location.href="/product/product_main_view"; // 이거말고 이전페이지로 가게하기?
+					location.href="/seller/product_main_view"; // 이거말고 이전페이지로 가게하기?
 				} else {
 					alert(data.errerMessage);
 				}
@@ -71,6 +66,4 @@
 		}); // 로그인 끝
 		
 	});
-
 </script>
-

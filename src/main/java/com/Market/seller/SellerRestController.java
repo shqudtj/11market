@@ -1,4 +1,4 @@
-package com.Market.user;
+package com.Market.seller;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,18 +14,19 @@ import org.springframework.web.bind.annotation.RestController;
 import com.Market.user.bo.UserBO;
 import com.Market.user.entity.UserEntity;
 
-@RequestMapping("/user")
-@RestController
-public class UserRestController {
 
+@RequestMapping("/seller")
+@RestController
+public class SellerRestController {
+	
 	@Autowired
 	private UserBO userBO;
+	
 	
 	
 	@RequestMapping("/is_duplicated_id")
 	public Map<String, Object> isDupliactedId(
 				@RequestParam("loginId") String loginId
-				
 			) {
 		
 		Map<String, Object> result = new HashMap<>();
@@ -44,7 +45,7 @@ public class UserRestController {
 		return result;
 	}
 	
-	@PostMapping("/sign_up")
+	@PostMapping("/seller_sign_up")
 	public Map<String, Object> signUp(
 				@RequestParam("loginId") String loginId,
 				@RequestParam("password") String password,
@@ -70,8 +71,8 @@ public class UserRestController {
 		
 		return result;
 	}
-	
-	@PostMapping("/sign_in")
+
+	@PostMapping("/seller_sign_in")
 	public Map<String, Object> signIn(
 				@RequestParam("loginId") String loginId,
 				@RequestParam("password") String password,

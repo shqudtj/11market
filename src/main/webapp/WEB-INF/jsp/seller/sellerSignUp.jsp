@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <div class="d-flex justify-content-center">
 	<div>
-		<form id="signUpForm" method="post" action="/user/sign_up">
+		<form id="signUpForm" method="post" action="/seller/seller_sign_up">
 			<div class="signUpBox">
 				<div>ID</div>
 				<div>
@@ -32,15 +32,15 @@
 		</form>
 	</div>
 </div>
+
 <script>
-	$(document).ready(function () {
+	$(document).ready(function() {
 		//alert("준비완료");
 		
 		// 중복확인
 		$("#loginIdCheckBtn").on('click', function() {
 			//alert("중복클릭");
-			
-			//let type = $('#type').val("구매회원");
+			//let type = $('#type').val("판매회원");
 			
 			$('#idCheckLength').addClass('d-none');
 			$('#idCheckDuplicated').addClass('d-none');
@@ -51,12 +51,11 @@
 				$('#idCheckLength').removeClass('d-none');
 				return;
 			}
-			console.log(loginId);
 			
 			// ajax - 중복확인
 			$.ajax({
 				// request
-				url:"/user/is_duplicated_id"
+				url:"/seller/is_duplicated_id"
 				, data: {"loginId":loginId}
 			
 				// response
@@ -74,7 +73,6 @@
 					alert('중복확인에 실패했습니다.');
 				}
 			});
-			
 		}); // 중복확인 끝
 		
 		
@@ -89,7 +87,7 @@
 			let name = $('#name').val().trim();
 			let phoneNumber = $('#phoneNumber').val().trim();
 			let email = $('#email').val().trim();
-			let type = $('#type').val("구매회원");
+			let type = $('#type').val("판매회원");
 			 
 			
 			console.log(password);
@@ -142,7 +140,7 @@
 				//response
 				if (data.code == 1) {
 					alert("가입이 완료되었습니다. 로그인을 해주세요.");
-					location.href="/user/sign_in_view";
+					location.href="/seller/seller_sign_in_view";
 				} else {
 					alert(data.errorMessage);
 				}
@@ -151,10 +149,8 @@
 		
 		
 	});
+
 </script>
-
-
-
 
 
 
