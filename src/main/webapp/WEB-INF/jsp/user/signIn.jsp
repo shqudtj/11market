@@ -23,6 +23,8 @@
 
 			
 			<input type="submit" id="loginBtn" class="btn btn-block btn-primary" value="로그인">
+			<a class="btn btn-block btn-dark" href="/search/search_loginId_view">아이디 찾기</a>
+			<a class="btn btn-block btn-dark" href="/search/search_password_view">비밀번호 찾기</a>
 			<a class="btn btn-block btn-dark" href="/user/sign_up_view">회원가입</a>
 			
 			<a class="btn btn-block btn-primary" href="/seller/seller_sign_in_view">판매회원 로그인</a>

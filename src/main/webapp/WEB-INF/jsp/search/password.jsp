@@ -7,17 +7,24 @@
 		
 		
 		
-		<form id="findLoginForm" action="/find/find_loginId" method="post">
+		<form id="findLoginForm" action="/search/search_password" method="post">
+			<label><input type="radio" name="type" value="phoneNumber" checked>휴대폰으로 찾기</label>
+			<label><input type="radio" name="type" value="email">이메일로 찾기</label>
+			
 			<div class="input-group mb-3 d-flex">
-				<label><input type="radio" name="type" value="phoneNumber" checked>휴대폰으로 찾기</label>
-				<label><input type="radio" name="type" value="email">이메일로 찾기</label>
-	
-				
 				<div class="input-group-prepend">
 					<span class="input-group-text">이름</span>
 				</div>
 				<input type="text" class="form-control" id="name" name="name" placeholder="이름을 입력해주세요">
 			</div>
+			
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text">아이디</span>
+				</div>
+				<input type="text" class="form-control" id="id" name="id" placeholder="아이디를 입력해주세요">
+			</div>
+			
 	
 			<div class="input-group mb-3 phoneNumber-box">
 				<div class="input-group-prepend">
@@ -34,12 +41,13 @@
 				<input type="text" class="form-control" id="email" name="email" placeholder="이메일을 입력해주세요.">
 			</div>
 			
-			<input type="submit" id="findLoginId" class="btn btn-block btn-primary" value="아이디 찾기">
+			<input type="submit" id="searchLoginId" class="btn btn-block btn-primary" value="비밀번호 찾기">
 		</form>
 	</div>
 	
 	
 </div>
+
 
 <script>
 	$(document).ready(function() {
@@ -63,7 +71,3 @@
 	});
 
 </script>
-
-
-
-
