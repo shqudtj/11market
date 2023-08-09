@@ -7,7 +7,7 @@
 		
 		
 		
-		<form id="findLoginForm" action="/search/search_password" method="post">
+		<form id="findPasswordForm" action="/search/search_password" method="post">
 			<label><input type="radio" name="type" value="phoneNumber" checked>휴대폰으로 찾기</label>
 			<label><input type="radio" name="type" value="email">이메일로 찾기</label>
 			
@@ -22,7 +22,7 @@
 				<div class="input-group-prepend">
 					<span class="input-group-text">아이디</span>
 				</div>
-				<input type="text" class="form-control" id="id" name="id" placeholder="아이디를 입력해주세요">
+				<input type="text" class="form-control" id="loginId" name="loginId" placeholder="아이디를 입력해주세요">
 			</div>
 			
 	
@@ -66,6 +66,43 @@
             	$('.email-box').removeClass('d-none');
             }
         });
+		
+		
+		$('#findPasswordForm').on('submit', function(e) {
+			e.preventDefault();
+			
+			let name = $('#name').val().trim();
+			let loginId = $('#loginId').val().trim();
+			let phoneNumber = $('#phoneNumber').val();
+			let email = $('#email').val();
+			console.log(name);
+			console.log(loginId);
+			console.log(phoneNumber);
+			console.log(email);
+			
+			if (!name) {
+				alert("이름을 입력하세요");
+				return false;
+			}
+			
+			
+			if ($('.email-box').has('d-none')) {
+				if (phoneNumber.length < 1) {
+					alert("전화번호를 입력하세요");
+					return false;
+				}
+					return false;
+			}
+			if ($('.phoneNumber-box').has('d-none')) {
+				if (!email) {
+					alert('이메일을 입력하세요.')
+					return false;
+				}	
+					return false;
+			}
+			
+			
+		});
 		
 		
 	});

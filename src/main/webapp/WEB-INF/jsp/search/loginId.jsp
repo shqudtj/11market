@@ -34,7 +34,8 @@
 				<input type="text" class="form-control" id="email" name="email" placeholder="이메일을 입력해주세요.">
 			</div>
 			
-			<input type="submit" id="searchLoginId" class="btn btn-block btn-primary" value="아이디 찾기">
+			
+			<button type="submit" id="searchLoginId" class="btn btn-primary text-white mt-2">아이디 찾기</button>
 		</form>
 	</div>
 	
@@ -59,10 +60,8 @@
             }
         });
 		
-		
-		$('#searchLoginId').on('submit', function(e) {
-			e.preventDefault(); // 서브밋 기능 중단
-			alert("버튼클릭");
+		$('#findLoginForm').on('submit', function(e) {
+			//e.preventDefault();
 			
 			let name = $('#name').val().trim();
 			let phoneNumber = $('#phoneNumber').val();
@@ -71,7 +70,50 @@
 			console.log(phoneNumber);
 			console.log(email);
 			
+			if (!name) {
+				alert("이름을 입력하세요");
+				return false;
+			}
 			
+			
+			if ($('.email-box').has('d-none')) {
+				if (phoneNumber.length < 1) {
+					alert("이메일박스 d-none진입");
+					alert("전화번호를 입력하세요");
+				}
+				return;
+			}
+			
+			if ($('.phoneNumber-box').has('d-none')) {
+				if (!email) {
+					alert("phoneNumber d-none진입");
+					alert('이메일을 입력하세요.')
+				}	
+				return;
+			}
+			
+			
+			$.ajax({
+				// request
+				url:"/search/search_logindId"
+				, data: {"loginId":loginId, "phoneNumber":phoneNumber, "email":email}
+			
+				// response
+				, success: function(data) {
+					if (data.isExistId) {
+						// 있음
+						location.href = "/search/provide_loginId_view"
+					} else {
+						// 없음 
+						alert("아이디가 존재하지 않습니다. 내용을 다시 확인해주세요.");
+					}	
+					
+				}
+				, error: function(request, status, error) {
+					alert('아이디확인에 실패했습니다.');
+				}
+			});
+
 			
 		});
 		

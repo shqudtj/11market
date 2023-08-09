@@ -22,4 +22,11 @@ public class SearchController {
 		
 		return "template/layout";		
 	}
+	
+	@GetMapping("/provide_loginId_view")
+	public String provideLoginIdView(Model model) {
+		model.addAttribute("view", "provide/provideLoginId");
+		
+		return "template/layout";	
+	}
 }

@@ -2,6 +2,7 @@ package com.Market.user.bo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.Market.user.dao.UserRepository;
 import com.Market.user.entity.UserEntity;
@@ -43,4 +44,16 @@ public class UserBO {
 		return userRepository.findByLoginIdAndPassword(loginId, password);
 	}
 	
+	public UserEntity getUserEntityByNameAndPhoneNumberAndEmail(String name, String phoneNumber, String email) {
+		
+		if (phoneNumber == null) {
+			return userRepository.findByNameAndEmail(name, email);
+		}
+		
+		if (email == null) {
+			return userRepository.findByNameAndEmail(name, phoneNumber);
+		}
+		
+		return userRepository.findByNameAndPhoneNumberAndEmail(name, phoneNumber, email);
+	}
 }
