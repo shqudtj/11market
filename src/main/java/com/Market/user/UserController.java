@@ -22,4 +22,11 @@ public class UserController {
 		
 		return "template/layout";
 	}
+	
+	@GetMapping("/information_view")
+	public String informationView(Model model) {
+		model.addAttribute("view", "user/information");
+		
+		return "template/layout";
+	}
 }
