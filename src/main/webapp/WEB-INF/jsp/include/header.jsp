@@ -21,12 +21,12 @@
 		
 		<!-- 유저정보페이지 -->
 		<div>
-			<a href="#" class="">
+			<a href="/user/myOrder_view" class="">
 				<img src="https://cdn.pixabay.com/photo/2017/03/05/21/55/emoticon-2120024_1280.png" width="50">
 			</a>
 			
 			<!-- 장바구니페이지 -->
-			<a href="#" class="">
+			<a href="/user/basket_view" class="">
 				<img src="https://cdn.pixabay.com/photo/2015/10/22/16/42/icon-1001596_1280.png" width="50">
 			</a>
 			
@@ -48,7 +48,7 @@
             	<li class="nav-item"><a href="#" class="nav-link text-white font-weight-bold">베스트</a></li>
                 <li class="nav-item"><a href="#" class="nav-link text-white font-weight-bold">쿠폰</a></li>
                 <li class="nav-item"><a href="#" class="nav-link text-white font-weight-bold">신선식품</a></li>
-                <li class="nav-item"><a href="#" class="nav-link text-white font-weight-bold">공지사항</a></li>
+                <li class="nav-item"><a href="/user/announcement_view" class="nav-link text-white font-weight-bold">공지사항</a></li>
             </ul>
         </nav>
 		
