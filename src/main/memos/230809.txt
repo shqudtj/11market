@@ -1,0 +1,25 @@
+api 호출방식
+
+자바스크립트로 호출은 보안때문에 X
+
+1.RestTemplate  -> 오래된거
+
+2. WebClient -> 요즘 사용되는 것
+  - build.gradle에 추가해야함
+
+
+-> @Service 붙어있는곳
+   - package 만들어서 새로 파기
+	@@@ApiClient 등으로 만들기
+
+insert시 0.3초만 쉬어줘도 컴퓨터는 많이쉬는거기때문에 1000개정도씩하고 쉬기
+
+
+
+
+
+JsonParson -> build.gardle
+
+ObjectMapper -> 안에 들어가 있음
+
+Json String을 Map으로 변환 후 사용

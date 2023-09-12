@@ -1,0 +1,37 @@
+develop - 커밋
+master - develop 병합
+
+기획 -> db 설계 ->url 설계 -> 구현 -> 테스트
+
+
+제3 정규화
+DTO, domailn, model  -> db 설계
+- 한 컬럼에 콤마로 넣지 않는다.(테이블 분리 1: N)  -> 2 정규화
+- 한 테이블의 한 행은 유일한 데이터로 구성한다. -> 3정규화
+
+
+swagger 라이브러리 -> 1.의 행위를 하지 않아도 자동적으로 문서화 시켜줌
+-> 프로젝트할때 한번 써보기
+
+1. 서버 API @RestController  return 객체 => JSON
+path:/post/create
+request method:post
+params:글내용
+
+응답
+{}
+
+
+Restful API
+/posts	GET
+/posts/post/13 GET
+/posts/post/13 PUT => update
+/posts/post/13 DELETE => delete
+/posts/post POST => insert
+
+
+2. 화면 주소       @Controller return string => jsp 할때의 주소
+
+
+
+
